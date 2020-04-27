@@ -1,0 +1,21 @@
+@model User
+
+<partial name="_Links"></partial>
+
+<div class="container border mt-2 mb-2">
+  <div class="row border-bottom mb-2">
+
+    <div class="col-md-6">
+      <p>@ViewBag.userId</p>
+      <h3>
+        @Model.FirstName
+      </h3>
+      <p>
+        @Model.Alias
+      </p>
+      <p>
+        @Model.Email
+      </p>
+    </div>
+  </div>
+</div>

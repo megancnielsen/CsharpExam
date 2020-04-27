@@ -1,0 +1,25 @@
+@model List<Idea>
+
+<partial name="_Links"></partial>
+
+<h2 class="text-center">All Ideas</h2>
+
+@foreach (Idea ideas in Model)
+{
+    <div class="card mx-auto text-center mb-3 w-50">
+
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">
+                @ideas.Alias
+            </h6>
+            <p class="card-text">
+                @ideas.Body
+            </p>
+            <a asp-action="Details" asp-controller="Posts" asp-route-id="@ideas.IdeaId">Details</a>
+            <a class="text-danger" href="/idea/@ideas.IdeaId/delete">Delete</a>
+            <div class="text-right">
+                @* <a asp-controller="Ideas" asp-action="Delete" asp-route-bandId="@Model.ideaId" class="btn btn-danger">Delete</a> *@
+            </div>
+        </div>
+    </div>
+}
